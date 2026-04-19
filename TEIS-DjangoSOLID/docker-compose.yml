@@ -10,7 +10,7 @@ services:
 
   web:
     build: .
-    command: gunicorn tienda_project.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn Tienda.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
     depends_on:
