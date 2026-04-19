@@ -13,11 +13,11 @@ from .serializers import OrdenInputSerializer
 @api_view(['GET'])
 def listar_productos(request):
     productos = [
-        {"id": 0, "nombre": "Cien años de soledad", "precio": 155.00},
-        {"id": 1, "nombre": "Harry Potter y La Orden del Fénix", "precio": 132.00},
-        {"id": 2, "nombre": "Clean Code en Python", "precio": 155.00},
-        {"id": 3, "nombre": "The Pragmatic Programmer", "precio": 200.00},
-        {"id": 4, "nombre": "Refactoring", "precio": 180.00},
+        {"id": 0, "nombre": "Cien años de soledad", "precio": 155.00, "stock": 1},
+        {"id": 1, "nombre": "Harry Potter y La Orden del Fénix", "precio": 132.00, "stock": 7},
+        {"id": 2, "nombre": "Clean Code en Python", "precio": 155.00, "stock": 8},
+        {"id": 3, "nombre": "The Pragmatic Programmer", "precio": 200.00, "stock": 5},
+        {"id": 4, "nombre": "Refactoring", "precio": 180.00, "stock": 6},
     ]
     return Response(productos)
 
