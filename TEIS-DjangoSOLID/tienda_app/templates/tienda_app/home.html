@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Libros Disponibles</title>
+</head>
+<body>
+    <h1>Bienvenido a la Tienda</h1>
+    <h2>Libros Disponibles para Compra</h2>
+    <ul>
+        {% for libro in libros %}
+            <li>
+                {{ libro.titulo }} - ${{ libro.precio }}
+                | Stock: {{ libro.inventario.cantidad }}
+                <a href="{% url 'compra_rapida' libro.id %}">Comprar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
