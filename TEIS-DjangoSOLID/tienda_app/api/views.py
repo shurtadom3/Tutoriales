@@ -5,9 +5,21 @@ from rest_framework.views import APIView
 from tienda_app.infra.factories import PaymentFactory
 from tienda_app.services import CompraRapidaService
 from tienda_app.models import Libro, Inventario
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from .serializers import OrdenInputSerializer
 
+@api_view(['GET'])
+def listar_productos(request):
+    productos = [
+        {"id": 0, "nombre": "Cien años de soledad", "precio": 155.00},
+        {"id": 1, "nombre": "Harry Potter y La Orden del Fénix", "precio": 132.00},
+        {"id": 2, "nombre": "Clean Code en Python", "precio": 155.00},
+        {"id": 3, "nombre": "The Pragmatic Programmer", "precio": 200.00},
+        {"id": 4, "nombre": "Refactoring", "precio": 180.00},
+    ]
+    return Response(productos)
 
 class CompraAPIView(APIView):
     """
